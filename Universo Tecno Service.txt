@@ -1,0 +1,20 @@
+
+ROTEADOR 2811
+SWITCH 2960
+
+1 NOTEBOOK 
+
+1 SERVIDOR CONECTADO SEMPRE NO SWITCH 
+
+
+
+NESSA REDE É COMPOSTA DE :
+
+1 ROTEADOR 2811 COM DUAS PORTAS 
+
+1 STWICHT 2960 
+
+
+comando configure terminal para entrar em modo global
+
+
