@@ -1,0 +1,125 @@
+version 12.2
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname senac002
+!
+enable secret 5 $1$mERr$3HhIgMGBA/9qNmgzccuxv0
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+interface FastEthernet0/1
+!
+interface FastEthernet0/2
+!
+interface FastEthernet0/3
+!
+interface FastEthernet0/4
+!
+interface FastEthernet0/5
+!
+interface FastEthernet0/6
+!
+interface FastEthernet0/7
+!
+interface FastEthernet0/8
+!
+interface FastEthernet0/9
+!
+interface FastEthernet0/10
+!
+interface FastEthernet0/11
+!
+interface FastEthernet0/12
+!
+interface FastEthernet0/13
+!
+interface FastEthernet0/14
+!
+interface FastEthernet0/15
+!
+interface FastEthernet0/16
+!
+interface FastEthernet0/17
+!
+interface FastEthernet0/18
+!
+interface FastEthernet0/19
+!
+interface FastEthernet0/20
+!
+interface FastEthernet0/21
+!
+interface FastEthernet0/22
+!
+interface FastEthernet0/23
+!
+interface FastEthernet0/24
+!
+interface GigabitEthernet0/1
+!
+interface GigabitEthernet0/2
+!
+interface Vlan1
+ ip address 192.168.11.9 255.255.255.0
+!
+!
+!
+!
+line con 0
+ password 123
+ login
+!
+line vty 0 4
+ login
+line vty 5 15
+ login
+!
+!
+!
+!
+end
+
+
+
+ip domain-name universotecnoservice.com
+senac001(config)#crypto key generate rsa
+The name for the keys will be: senac001.universotecnoservice.com
+Choosp
+
+e the size of the key modulus in the range of 360 to 2048 for your
+  General Purpose Keys. Choosing a key modulus greater than 512 may take
+  a few minutes.
+
+How many bits in the modulus [512]: 1024
+% Generating 1024 bit RSA keys, keys will be non-exportable...[OK]
+
+senac001(config)#username samuelc secret 1234
+*mar 1 1:2:33.545: %SSH-5-ENABLED: SSH 1.99 has been enabled
+senac001(config)#line vty 0 15
+senac001(config-line)#transport input ssh
+senac001(config-line)#login local
+senac001(config-line)#exit
+senac001(config)#ip ssh version 2
+senac001(config)#exit
+
+
+comandos telnet 
+
+line vty 0 15 
+
+password 123
+
+login
+
+exit
+
+acessar shwitch via ssh 
+
+comando ssh -l samuel 192.168.11.253
