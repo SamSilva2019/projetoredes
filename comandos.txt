@@ -3,9 +3,9 @@ no service timestamps log datetime msec
 no service timestamps debug datetime msec
 no service password-encryption
 !
-hostname edificioalvorada2
+hostname central
 !
-enable secret 5 $1$mERr$3HhIgMGBA/9qNmgzccuxv0
+
 !
 !
 !
@@ -73,7 +73,7 @@ interface Vlan1
 !
 !
 line con 0
- password 123
+ password 1234
  login
 !
 line vty 0 4
@@ -88,7 +88,7 @@ end
 
 
 
-ip domain-name universotecnoservice.com
+ip domain-name central.com
 senac001(config)#crypto key generate rsa
 The name for the keys will be: senac001.universotecnoservice.com
 Choosp
@@ -100,7 +100,7 @@ e the size of the key modulus in the range of 360 to 2048 for your
 How many bits in the modulus [512]: 1024
 % Generating 1024 bit RSA keys, keys will be non-exportable...[OK]
 
-senac001(config)#username samuelc secret 1234
+senac001(config)#username central secret 123456789
 *mar 1 1:2:33.545: %SSH-5-ENABLED: SSH 1.99 has been enabled
 senac001(config)#line vty 0 15
 senac001(config-line)#transport input ssh
@@ -114,7 +114,7 @@ comandos telnet
 
 line vty 0 15 
 
-password 123
+password 1234
 
 login
 
@@ -123,3 +123,7 @@ exit
 acessar shwitch via ssh 
 
 comando ssh -l samuel 192.168.11.253
+
+
+show flash
+show boot
